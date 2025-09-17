@@ -1,0 +1,24 @@
+[
+  {
+    "defaultValue": "",
+    "key": "CsvPath",
+    "templateOptions": {
+      "description": "The path to the CSV file to export the data to",
+      "label": "CSV File Path",
+      "placeholder": "C:\\Tools4Ever\\HelloID\\gebruikers.txt",
+      "required": true
+    },
+    "type": "input"
+  },
+  {
+    "defaultValue": "",
+    "key": "Encoding",
+    "templateOptions": {
+      "description": "The encoding for the imported CSV file. The default value is utf8",
+      "label": "Encoding",
+      "placeholder": "utf8",
+      "required": true
+    },
+    "type": "input"
+  }
+]
