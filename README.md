@@ -22,12 +22,25 @@
 
 _HelloID-Conn-Prov-Target-Corsa-Users_ is a target connector that writes person/user attribute values to tab delimited CSV file. This file will be imported by Corsa to create/update user accounts.
 
+## Supported  features
+
+The following features are available:
+
+| Feature                                   | Supported | Actions                                 | Remarks           |
+| ----------------------------------------- | --------- | --------------------------------------- | ----------------- |
+| **Account Lifecycle**                     | ✅         | Create, Update                          |                   |
+| **Permissions**                           | ❌         | -                                       |                   |
+| **Resources**                             | ❌         | -                                       |                   |
+| **Entitlement Import: Accounts**          | ❌         | -                                       |                   |
+| **Entitlement Import: Permissions**       | ❌         | -                                       |                   |
+| **Governance Reconciliation Resolutions** | ❌         | -                                       |                   |
+
 ## Getting started
 
 ### Prerequisites
 
 - HelloID Agent running On-Premises
-- Write access to a shared location for storing the blacklist CSV file
+- Write access to a shared location for storing the CSV file
 - **Concurrent actions should be set to 1** to avoid file locking or accidental overwrites
 
 
@@ -38,7 +51,7 @@ The following settings are required to connect to the CSV file.
 | Setting                | Description                                                                                                                               | Mandatory |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | --------- |
 | CSV File Path          | Full path to the CSV file                                                                                                                 | Yes       |
-| Encoding               | Encoding used (e.g. `utf-8`, `ascii`)                                                                                                     | Yes       |
+| Encoding               | Encoding used (e.g. `utf-8`, `ascii`). Default value is: `utf-8`                                                                          | Yes       |
 
 ## Correlation configuration
 
@@ -55,9 +68,6 @@ To properly setup the correlation:
     | Enable correlation        | `True`       |
     | Person correlation field  | `ExternalId`           |
     | Account correlation field | `Code_personeel` |
-
-> [!TIP]
-> _For more information on correlation, please refer to our correlation [documentation](https://docs.helloid.com/en/provisioning/target-systems/powershell-v2-target-systems/correlation.html) pages_.
 
 ### Available Lifecycle Actions
 
